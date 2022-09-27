@@ -16,7 +16,7 @@ plot1 <- ggplot(gapmider_without_kuwait, aes(x=lifeExp,y=gdpPercap,color=contine
 plot1
 
 ggsave(
-  filename = "plot1.png", 
+  filename = "/Users/mayue/Downloads/GEO511/CS03/plot1.png", 
   width = 15,           
   height = 7,            
   units = "in"   
@@ -41,7 +41,7 @@ plot2 <- ggplot(gapmider_without_kuwait,aes(x=year,y=gdpPercap,color=continent,s
 plot2
 
 ggsave(
-  filename = "plot2.png", 
+  filename = "/Users/mayue/Downloads/GEO511/CS03/plot2.png", 
   width = 15,           
   height = 7,            
   units = "in"   
