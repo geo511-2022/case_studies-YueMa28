@@ -17,6 +17,6 @@ result_new2 <- inner_join(result_new,airports,by=c("dest"="faa")) %>% select("or
 
 result_new2
 
-install.packages("usethis")
-library(usethis)
-use_git_config(user.name = "YueMa28", user.email = "yma28@buffalo.edu")
+
+
+
