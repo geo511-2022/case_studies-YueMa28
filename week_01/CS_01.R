@@ -11,7 +11,7 @@ petal_length_mean = mean(len)
 
 
 #plot using hist() and save it
-png(file="/Users/mayue/Downloads/GEO511/CS_01/petal_length_distribution_hist.png",
+png(file="petal_length_distribution_hist.png",
     width=500, height= 400)
 hist(len,
      col="purple", border="white",
