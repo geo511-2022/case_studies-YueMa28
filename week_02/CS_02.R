@@ -15,7 +15,7 @@ temp=read_table(dataurl,
                               "AUG","SEP","OCT","NOV",  
                               "DEC","DJF","MAM","JJA",  
                               "SON","metANN"))
-# renaming is necessary becuase they used dashes ("-")
+# renaming is necessary because they used dashes ("-")
 # in the column names and R doesn't like that.
 
 View(temp)
@@ -28,6 +28,6 @@ myimg <- ggplot(temp,aes(x=YEAR,y=JJA)) +
 
 myimg
 
-png(filename = "/Users/mayue/Downloads/GEO511/CS02/Mean_Summer_Temperatures_in_Buffalo.png",width=500,height=300)
+png(filename = "Mean_Summer_Temperatures_in_Buffalo.png",width=500,height=300)
 print(myimg)
 dev.off()
