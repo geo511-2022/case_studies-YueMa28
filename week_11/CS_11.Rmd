@@ -27,8 +27,8 @@ census_api_key("05670ba5a977c8507163268643ea67909e32759c",install = TRUE, overwr
 
 # download the data
 
-
 ```{r}
+
 library(tidycensus)
 racevars <- c(White = "P005003", 
               Black = "P005004", 
