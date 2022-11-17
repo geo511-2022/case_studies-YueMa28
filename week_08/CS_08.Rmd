@@ -1,0 +1,73 @@
+---
+title: "CS_08"
+author: "Yue Ma"
+date: "9/20/2022"
+output:
+  html_document: default
+  github_document: default
+  powerpoint_presentation: default
+  word_document: default
+---
+
+
+
+```{r, results='hide',message=FALSE, echo=FALSE}
+
+library(tidyverse)
+library(knitr)
+library(ggplot2)
+library(kableExtra)
+```
+
+
+
+
+## Data collection
+
+read the txt data from the website
+
+
+```{r results='hide',message=FALSE, echo=FALSE}
+annal_co2 <- read_table("https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt",skip=57,col_names = FALSE)
+colnames(annal_co2) <- c("year","mean","unc")
+annal_co2
+
+```
+
+## draw the figures
+
+Make the line plot of CO2 emission
+
+```{r,results='hide',message=FALSE, echo=FALSE}
+
+ggplot(annal_co2,aes(x=year,y=mean)) +
+  geom_point()+
+  geom_line() +
+  labs(x="Year", y = "Mauna Loa CO2 annual mean values (ppm)")
+
+
+```
+
+## get the top five years for CO2 emission
+
+draw the table
+
+```{r,message=FALSE, echo=FALSE}
+top_co2 <- annal_co2[order(annal_co2$mean,decreasing = TRUE),]
+top_five <- top_co2[1:5,]
+
+kable(
+  top_five,
+  col.names = c("Year", "Mean","Unc"),
+  digits = 2,
+  booktabs = TRUE
+) %>%
+  kable_styling(latex_options = c("striped", "scale_down")) %>%
+  row_spec(1, color = "red") %>%
+  as_image(width=10,file = "/Users/mayue/Downloads/GEO511/CS08/table.png")
+  
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
